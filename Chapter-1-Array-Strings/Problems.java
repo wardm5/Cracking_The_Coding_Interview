@@ -64,6 +64,31 @@ public class Problems {
         return true;        // else return true
     }
 
+    // /*
+    //     URLify - Run time of O(n)
+    //     This method checks two strings to see if they are permutations of each`
+    //     other and returns a boolean if they are or not.
+    // */
+    // public char[] URLify(String str, int trueLength) {
+    //     int curr = trueLength - 1;
+    //     for (int i = curr; i >= 0; i--) {
+    //         char temp = arr[i];
+    //         if (temp == ' ') {
+    //
+    //         }
+    //
+    //     }
+    // }
 
 
+
+    /*
+        checkPermutation - Run time of O(n)
+        This method checks two strings to see if they are permutations of each`
+        other and returns a boolean if they are or not.
+    */
+    public boolean stringRotation(String str1, String str2) {
+        String temp = str2 + str2;
+        return temp.contains(str1);
+    }
 }
