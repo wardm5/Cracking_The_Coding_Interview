@@ -7,5 +7,9 @@ public class main {
         // isUnique2 - no data structures allowed...
         System.out.println(problems.isUnique2("abc"));  // return true
         System.out.println(problems.isUnique2("abbc")); // return false
+        // checkPermutation
+        System.out.println(problems.checkPermutation("abc", "ab")); // false
+        System.out.println(problems.checkPermutation("abc", "cab")); // true
+        System.out.println(problems.checkPermutation("abc", "caz")); // false
     }
 }
