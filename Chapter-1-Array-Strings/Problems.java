@@ -80,12 +80,9 @@ public class Problems {
     //     }
     // }
 
-
-
     /*
-        checkPermutation - Run time of O(n)
-        This method checks two strings to see if they are permutations of each`
-        other and returns a boolean if they are or not.
+        stringRotation - Run time of O(1)
+        This method checks if a second string is a rotation of the first string.
     */
     public boolean stringRotation(String str1, String str2) {
         String temp = str2 + str2;
