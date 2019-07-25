@@ -80,6 +80,47 @@ public class Problems {
     //     }
     // }
 
+
+    /*
+        stringRotation - Run time of O(1)
+        This method checks if a second string is a rotation of the first string.
+    */
+    public void zeroMatrix(int[][] matrix) {
+        ArrayList<ArrayList<Integer>> list = new ArrayList<>();
+        int[][] copy = matrix.clone();
+        for (int i = 0; i < matrix.length; i++) {
+            ArrayList<Integer> subList = new ArrayList<>();
+            for (int j = 0; j < matrix[0].length; j++) {
+                if (copy[i][j] == 0) {
+                    subList.add(i);
+                    subList.add(j);
+                    list.add(subList);
+                }
+            }
+        }
+        fill(list, matrix);
+    }
+    // private void fill(int i, int j, int[][] matrix) {
+    //     for (int y = 0; y < matrix.length; y++) {
+    //         matrix[y][j] = 0;
+    //     }
+    //     for (int x = 0; x < matrix[0].length; x++) {
+    //         matrix[i][x] = 0;
+    //     }
+    // }
+    private void fill(ArrayList<ArrayList<Integer>> list, int[][] matrix) {
+        for (int z = 0; z < list.size(); z++) {
+            int i = list.get(z).get(0);
+            int j = list.get(z).get(1);
+            for (int y = 0; y < matrix.length; y++) {
+                matrix[y][j] = 0;
+            }
+            for (int x = 0; x < matrix[0].length; x++) {
+                matrix[i][x] = 0;
+            }
+        }
+    }
+
     /*
         stringRotation - Run time of O(1)
         This method checks if a second string is a rotation of the first string.
