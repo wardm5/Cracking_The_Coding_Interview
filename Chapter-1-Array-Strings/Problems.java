@@ -82,8 +82,9 @@ public class Problems {
 
 
     /*
-        stringRotation - Run time of O(1)
-        This method checks if a second string is a rotation of the first string.
+        zeroMatrix - Run time of O(M*N)
+        This method takes in an matrix and for any item in the matrix that is 0, it will
+        update the row and column for that item to 0's.
     */
     public void zeroMatrix(int[][] matrix) {
         ArrayList<ArrayList<Integer>> list = new ArrayList<>();

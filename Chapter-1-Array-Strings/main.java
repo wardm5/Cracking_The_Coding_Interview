@@ -33,16 +33,18 @@ public class main {
         System.out.println("\n1.2 zeroMatrix");
         int[][] matrix = new int[][] {{0, 1, 1}, {1, 1, 1}, {0, 1, 1}};
         problems.zeroMatrix(matrix);
+        printMatrix(matrix);    // {{0 0 0}, {0 1 1}, {0 0 0}}
+        // 1.9 stringRotation
+        System.out.println("\n1.2 stringRotation");
+        System.out.println(problems.stringRotation("waterbottle", "erbottlewat")); // true
+    }
+
+    public static void printMatrix(int[][] matrix) {
         for (int i = 0 ; i < matrix.length; i++) {
             for (int j = 0; j < matrix[0].length; j++) {
                 System.out.print(matrix[i][j] + " ");
             }
             System.out.println();
         }
-        // 1.9 stringRotation
-        System.out.println("\n1.2 stringRotation");
-        System.out.println(problems.stringRotation("waterbottle", "erbottlewat")); // true
-
-
     }
 }
