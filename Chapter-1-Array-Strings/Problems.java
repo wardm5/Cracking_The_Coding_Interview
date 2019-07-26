@@ -64,22 +64,32 @@ public class Problems {
         return true;        // else return true
     }
 
-    // /*
-    //     URLify - Run time of O(n)
-    //     This method checks two strings to see if they are permutations of each`
-    //     other and returns a boolean if they are or not.
-    // */
-    // public char[] URLify(String str, int trueLength) {
-    //     int curr = trueLength - 1;
-    //     for (int i = curr; i >= 0; i--) {
-    //         char temp = arr[i];
-    //         if (temp == ' ') {
-    //
-    //         }
-    //
-    //     }
-    // }
+    /*
+        URLify - Run time of O(n)
+        This method takes a string and length and changes spaces in the string
+        to %20 so that the string can work as a URL.
 
+        Note: not in place...
+    */
+    public static String URLify(String s, int length) {
+        if (s == null || s.isEmpty()) {
+            return "";
+        }
+        int count = 0;
+        char[] result = new char[s.length()];
+        for (int i = 0; i < length; i ++) {
+            if (s.charAt(i) == ' ') {
+                result[count] = '%';
+                result[count + 1] = '2';
+                result[count + 2] = '0';
+                count = count + 3;
+            } else {
+                result[count] = s.charAt(i);
+                count = count + 1;
+            }
+        }
+        return String.valueOf(result);
+    }
 
     /*
         zeroMatrix - Run time of O(M*N)
