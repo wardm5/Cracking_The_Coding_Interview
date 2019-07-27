@@ -69,7 +69,7 @@ public class Problems {
         This method takes a string and length and changes spaces in the string
         to %20 so that the string can work as a URL.
 
-        Note: not in place...
+        Note: not in place
     */
     public String URLify1(String s, int length) {
         if (s == null || s.isEmpty()) {
@@ -85,8 +85,12 @@ public class Problems {
                 count = count + 3;
             } else {
                 result[count] = s.charAt(i);
-                count = count + 1;
+                count++;
             }
+            // for (int j = 0; j < result.length; j++) {
+            //     System.out.print(result[j]);
+            // }
+            // System.out.println();
         }
         return String.valueOf(result);
     }
@@ -96,7 +100,7 @@ public class Problems {
         This method takes a string and length and changes spaces in the string
         to %20 so that the string can work as a URL.
 
-        Note: not in place...
+        Note: in place
     */
     public String URLify2(char[] str, int length) {
         int end = length - 1;

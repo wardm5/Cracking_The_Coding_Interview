@@ -20,6 +20,13 @@ public class main {
 
         // 1.3 URLify
         System.out.println("\n1.3 URLify");
+        String test = "Mr John Smith    ";
+        System.out.println(problems.URLify1(test, 13)); // false
+        char[] testArray = new char[test.length()];
+        for (int i = 0 ; i < test.length(); i++) {
+            testArray[i] = test.charAt(i);
+        }
+        System.out.println(problems.URLify2(testArray, 13)); // true
 
         // 1.4 palindromePermutation
 
