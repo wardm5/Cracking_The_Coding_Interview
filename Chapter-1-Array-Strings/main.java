@@ -18,15 +18,17 @@ public class main {
         System.out.println(problems.checkPermutation("abc", "cab")); // true
         System.out.println(problems.checkPermutation("abc", "caz")); // false
 
-        // 1.3 URLify
+        // 1.3 URLify1 - not in place
         System.out.println("\n1.3 URLify");
         String test = "Mr John Smith    ";
-        System.out.println(problems.URLify1(test, 13)); // false
+        System.out.println(problems.URLify1(test, 13)); // Mr%20John%20Smith
+
+        // 1.3 URLify2 - in place
         char[] testArray = new char[test.length()];
         for (int i = 0 ; i < test.length(); i++) {
             testArray[i] = test.charAt(i);
         }
-        System.out.println(problems.URLify2(testArray, 13)); // true
+        System.out.println(problems.URLify2(testArray, 13)); // Mr%20John%20Smith
 
         // 1.4 palindromePermutation
 
