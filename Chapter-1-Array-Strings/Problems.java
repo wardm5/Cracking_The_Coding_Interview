@@ -72,9 +72,8 @@ public class Problems {
         Note: not in place
     */
     public String URLify1(String s, int length) {
-        if (s == null || s.isEmpty()) {
+        if (s == null || s.isEmpty())
             return "";
-        }
         int count = 0;
         char[] result = new char[s.length()];
         for (int i = 0; i < length; i ++) {
@@ -87,10 +86,6 @@ public class Problems {
                 result[count] = s.charAt(i);
                 count++;
             }
-            // for (int j = 0; j < result.length; j++) {
-            //     System.out.print(result[j]);
-            // }
-            // System.out.println();
         }
         return String.valueOf(result);
     }
@@ -103,12 +98,8 @@ public class Problems {
         Note: in place
     */
     public String URLify2(char[] str, int length) {
-        int end = length - 1;
+        int end = str.length - 1;
         int curr = length - 1;
-        // gets from the end to the first character
-        while (str[curr] == ' ') {
-            curr--;
-        }
         while (curr >= 0) {
             char temp = str[curr];
             if (temp == ' ') {
@@ -118,11 +109,11 @@ public class Problems {
                 end -= 3;
             } else {
                 str[end] = temp;
-                end--;
+                end -= 1;
             }
             curr--;
         }
-        return str.toString();
+        return String.valueOf(str);
     }
 
     /*
@@ -145,14 +136,7 @@ public class Problems {
         }
         fill(list, matrix);
     }
-    // private void fill(int i, int j, int[][] matrix) {
-    //     for (int y = 0; y < matrix.length; y++) {
-    //         matrix[y][j] = 0;
-    //     }
-    //     for (int x = 0; x < matrix[0].length; x++) {
-    //         matrix[i][x] = 0;
-    //     }
-    // }
+
     private void fill(ArrayList<ArrayList<Integer>> list, int[][] matrix) {
         for (int z = 0; z < list.size(); z++) {
             int i = list.get(z).get(0);
