@@ -1,8 +1,10 @@
 import java.util.*;
 public class Problems {
+    // just a simple test method
     public void test() {
         System.out.println("This test works! ");
     }
+
     /*
         isUnique1 - Run time of O(n)
         This method goes through a string and determines if any characters are
@@ -117,8 +119,9 @@ public class Problems {
     }
 
     /*
-        palindromePermutation - Run time of
-
+        palindromePermutation - Run time of O(n)
+        This method takes in a string and determines if that string is a palindrone permutation, that is
+        if the string could be a palindrone or not.
     */
     public boolean palindromePermutation(String str1) {
         int oddCount = 0;
@@ -128,16 +131,11 @@ public class Problems {
             int val = temp;
             if (temp == ' ')  continue;
             arr[val] = arr[val] + 1;
-            if (arr[val] % 2 != 0)
-                oddCount++;
-            else
-                oddCount--;
+            if (arr[val] % 2 != 0) oddCount++;
+            else oddCount--;
         }
         return !(oddCount > 1);
     }
-
-
-
 
     /*
         zeroMatrix - Run time of O(M*N)
