@@ -31,7 +31,12 @@ public class main {
         System.out.println(problems.URLify2(testArray, 13)); // Mr%20John%20Smith
 
         // 1.4 palindromePermutation
-
+        System.out.println("\n1.4 palindromePermutation");
+        System.out.println(problems.palindromePermutation("taco cat", "acto cta"));  // true
+        System.out.println(problems.palindromePermutation("taco cat", "ato cta"));  // false
+        System.out.println(problems.palindromePermutation("taco cat", "asto cta"));  // false
+        System.out.println(problems.palindromePermutation("cac", "cca"));  // true
+        System.out.println(problems.palindromePermutation("cac", "cca"));  // true
 
         // 1.5 oneAway
 
