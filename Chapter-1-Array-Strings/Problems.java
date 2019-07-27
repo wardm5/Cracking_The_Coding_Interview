@@ -71,7 +71,7 @@ public class Problems {
 
         Note: not in place...
     */
-    public static String URLify(String s, int length) {
+    public String URLify1(String s, int length) {
         if (s == null || s.isEmpty()) {
             return "";
         }
@@ -89,6 +89,36 @@ public class Problems {
             }
         }
         return String.valueOf(result);
+    }
+
+    /*
+        URLify - Run time of O(n)
+        This method takes a string and length and changes spaces in the string
+        to %20 so that the string can work as a URL.
+
+        Note: not in place...
+    */
+    public String URLify2(char[] str, int length) {
+        int end = length - 1;
+        int curr = length - 1;
+        // gets from the end to the first character
+        while (str[curr] == ' ') {
+            curr--;
+        }
+        while (curr >= 0) {
+            char temp = str[curr];
+            if (temp == ' ') {
+                str[end] = '0';
+                str[end - 1] = '2';
+                str[end -2] = '%';
+                end -= 3;
+            } else {
+                str[end] = temp;
+                end--;
+            }
+            curr--;
+        }
+        return str.toString();
     }
 
     /*

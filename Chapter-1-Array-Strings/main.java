@@ -1,21 +1,25 @@
 public class main {
     public static void main(String[] args) {
         Problems problems = new Problems();
+
         // 1.1 isUnique1 - data structures allowed...
         System.out.println("\n1.1 isUnique1");
         System.out.println(problems.isUnique1("abc"));  // return true
         System.out.println(problems.isUnique1("abbc")); // return false
+
         // 1.1 isUnique2 - no data structures allowed...
         System.out.println("\n1.1 isUnique2");
         System.out.println(problems.isUnique2("abc"));  // return true
         System.out.println(problems.isUnique2("abbc")); // return false
+
         // 1.2 checkPermutation
         System.out.println("\n1.2 checkPermutation");
         System.out.println(problems.checkPermutation("abc", "ab")); // false
         System.out.println(problems.checkPermutation("abc", "cab")); // true
         System.out.println(problems.checkPermutation("abc", "caz")); // false
-        // 1.3 URLify
 
+        // 1.3 URLify
+        System.out.println("\n1.3 URLify");
 
         // 1.4 palindromePermutation
 
@@ -34,6 +38,7 @@ public class main {
         int[][] matrix = new int[][] {{0, 1, 1}, {1, 1, 1}, {0, 1, 1}};
         problems.zeroMatrix(matrix);
         printMatrix(matrix);    // {{0 0 0}, {0 1 1}, {0 0 0}}
+
         // 1.9 stringRotation
         System.out.println("\n1.2 stringRotation");
         System.out.println(problems.stringRotation("waterbottle", "erbottlewat")); // true
