@@ -124,17 +124,17 @@ public class Problems {
         if the string could be a palindrone or not.
     */
     public boolean palindromePermutation(String str1) {
-        int oddCount = 0;
-        int[] arr = new int[256];
-        for (int i = 0 ; i < str1.length(); i++) {
-            char temp = str1.charAt(i);
-            int val = temp;
-            if (temp == ' ')  continue;
-            arr[val] = arr[val] + 1;
-            if (arr[val] % 2 != 0) oddCount++;
-            else oddCount--;
+        int oddCount = 0;                               // initalize odd count
+        int[] arr = new int[256];                       // initlaize array to keep track of characters
+        for (int i = 0 ; i < str1.length(); i++) {      // for each character in string
+            char temp = str1.charAt(i);                 // set temp char
+            int val = temp;                             // set val for that char (ascii val)
+            if (temp == ' ')  continue;                 // if temp is space, then continue loop
+            arr[val] = arr[val] + 1;                    // otherwise, increment that char in the array
+            if (arr[val] % 2 != 0) oddCount++;          // if the value for that char is odd, then increase odd counter
+            else oddCount--;                            // else decrement odd counter
         }
-        return !(oddCount > 1);
+        return !(oddCount > 1);         // if odd counter is greater than 1, then it cannot be a palindrone permutation
     }
 
     /*
