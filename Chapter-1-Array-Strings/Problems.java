@@ -120,37 +120,20 @@ public class Problems {
         palindromePermutation - Run time of
 
     */
-    public boolean palindromePermutation(String str1, String str2) {
-        // null, string checks
-        if (str1.length() != str2.length())
-            return false;
+    public boolean palindromePermutation(String str1) {
         int oddCount = 0;
         int[] arr = new int[256];
-        // check if string could be palindrone
         for (int i = 0 ; i < str1.length(); i++) {
             char temp = str1.charAt(i);
             int val = temp;
-            if (temp == ' ')
-                continue;
+            if (temp == ' ')  continue;
             arr[val] = arr[val] + 1;
             if (arr[val] % 2 != 0)
                 oddCount++;
             else
                 oddCount--;
         }
-        if (oddCount > 1)
-            return false;
-        // check if they are the same string
-        for (int i = 0; i < str2.length(); i++) {
-            char temp = str2.charAt(i);
-            int val = temp;
-            if (temp == ' ')
-                continue;
-            arr[val] = arr[val] - 1;
-            if (arr[val] < 0)
-                return false;
-        }
-        return true;
+        return !(oddCount > 1);
     }
 
 

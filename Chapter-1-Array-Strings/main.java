@@ -32,11 +32,11 @@ public class main {
 
         // 1.4 palindromePermutation
         System.out.println("\n1.4 palindromePermutation");
-        System.out.println(problems.palindromePermutation("taco cat", "acto cta"));  // true
-        System.out.println(problems.palindromePermutation("taco cat", "ato cta"));  // false
-        System.out.println(problems.palindromePermutation("taco cat", "asto cta"));  // false
-        System.out.println(problems.palindromePermutation("cac", "cca"));  // true
-        System.out.println(problems.palindromePermutation("cac", "cca"));  // true
+        System.out.println(problems.palindromePermutation("taco cat"));  // true
+        System.out.println(problems.palindromePermutation("acto cta"));  // true
+        System.out.println(problems.palindromePermutation("asto cta"));  // false
+        System.out.println(problems.palindromePermutation("cac"));  // true
+        System.out.println(problems.palindromePermutation("cca"));  // true
 
         // 1.5 oneAway
 
