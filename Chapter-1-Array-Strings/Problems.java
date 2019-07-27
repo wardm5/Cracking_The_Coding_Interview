@@ -122,30 +122,28 @@ public class Problems {
         update the row and column for that item to 0's.
     */
     public void zeroMatrix(int[][] matrix) {
-        ArrayList<ArrayList<Integer>> list = new ArrayList<>();
-        int[][] copy = matrix.clone();
-        for (int i = 0; i < matrix.length; i++) {
-            ArrayList<Integer> subList = new ArrayList<>();
+        ArrayList<ArrayList<Integer>> list = new ArrayList<>();  // creates array of array of integers to store coordinates
+        for (int i = 0; i < matrix.length; i++) {               // go through each point in matrix
             for (int j = 0; j < matrix[0].length; j++) {
-                if (copy[i][j] == 0) {
-                    subList.add(i);
-                    subList.add(j);
-                    list.add(subList);
+                if (matrix[i][j] == 0) {                        // if the point in the matrix contains 0...
+                    ArrayList<Integer> subList = new ArrayList<>();     // create ArrayList to store point values
+                    subList.add(i);  // add y
+                    subList.add(j);  // add x
+                    list.add(subList);  // add these points to the array containing points
                 }
             }
         }
-        fill(list, matrix);
+        fill(list, matrix);         // helper method to fill in the matrix
     }
-
     private void fill(ArrayList<ArrayList<Integer>> list, int[][] matrix) {
-        for (int z = 0; z < list.size(); z++) {
-            int i = list.get(z).get(0);
-            int j = list.get(z).get(1);
-            for (int y = 0; y < matrix.length; y++) {
-                matrix[y][j] = 0;
+        for (int z = 0; z < list.size(); z++) {     // for all arrays in the ArrayList
+            int i = list.get(z).get(0);             // get the y value
+            int j = list.get(z).get(1);             // get the x value
+            for (int y = 0; y < matrix.length; y++) {   // for all y values
+                matrix[y][j] = 0;                   // place 0 at the x and y value
             }
-            for (int x = 0; x < matrix[0].length; x++) {
-                matrix[i][x] = 0;
+            for (int x = 0; x < matrix[0].length; x++) {  // for all x values
+                matrix[i][x] = 0;                   //  place 0 at the x and y value
             }
         }
     }
