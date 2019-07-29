@@ -139,28 +139,29 @@ public class Problems {
 
     /*
         stringCompression - Run time of
-
+        This method takes in a string and then either compresses it by noting how many characters were typed
+        or provide the orginal string if that was shorter than the 'compressed version'
     */
     public String stringCompression(String str) {
         // null check
-        StringBuilder builder = new StringBuilder();
-        int count = 0;
-        char curr = str.charAt(0);
-        for (int i = 1 ; i < str.length(); i++) {
-            if (str.charAt(i) != curr) {
-                builder.append(curr).append(count + 1);
-                curr = str.charAt(i);
-                count = 0;
-            } else if (i == str.length() - 1) {
-                builder.append(curr).append(count + 2);
+        StringBuilder builder = new StringBuilder();        //  create string builder for efficent string concatination
+        int count = 0;                                      // initalize count
+        char prior = str.charAt(0);                         // initalize character to first char in string
+        for (int i = 1 ; i < str.length(); i++) {           // for all chars in string
+            if (str.charAt(i) != prior) {                   // if the current charcter is different than the prior one
+                builder.append(prior).append(count + 1);    // add prior char to the string builder with the count + 1
+                prior = str.charAt(i);                      // set current char to the currnet character
+                count = 0;                                  // set count to 0
+            } else if (i == str.length() - 1) {             // if on the last char in the string
+                builder.append(prior).append(count + 2);    // the builder adds the last char plus the count + 2
             } else {
-                count++;
+                count++;             // else increase count
             }
         }
-        String temp = builder.toString();
-        if (temp.length() < str.length())
-            return temp;
-        return str;
+        String temp = builder.toString();   // convert StringBuilder to string
+        if (temp.length() < str.length())   // check if orignal string is longer than the compressed string
+            return temp;        // if compressed is less, return compressed version
+        return str;             // else return orginal
     }
 
     /*

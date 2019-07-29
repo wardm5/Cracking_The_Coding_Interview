@@ -42,7 +42,9 @@ public class main {
         // problems.oneAway();
 
         // 1.6 stringCompression
-        System.out.println(problems.stringCompression("aabcccccaaa"));
+        System.out.println("\n1.4 stringCompression");
+        System.out.println(problems.stringCompression("aabcccccaaa"));  //  a2b1c5a3
+        System.out.println(problems.stringCompression("abcdefg"));      //  abcdefg
 
         //  1.7 rotateMatrix
         // problems.rotateMatrix();
