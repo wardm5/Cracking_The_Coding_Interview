@@ -111,7 +111,7 @@ public class Problems {
                 end -= 3;
             } else {
                 str[end] = temp;
-                end -= 1;
+                end--;
             }
             curr--;
         }
@@ -138,7 +138,33 @@ public class Problems {
     }
 
     /*
-        zeroMatrix - Run time of O(M*N)
+        stringCompression - Run time of
+
+    */
+    public String stringCompression(String str) {
+        // null check
+        StringBuilder builder = new StringBuilder();
+        int count = 0;
+        char curr = str.charAt(0);
+        for (int i = 1 ; i < str.length(); i++) {
+            if (str.charAt(i) != curr) {
+                builder.append(curr).append(count + 1);
+                curr = str.charAt(i);
+                count = 0;
+            } else if (i == str.length() - 1) {
+                builder.append(curr).append(count + 2);
+            } else {
+                count++;
+            }
+        }
+        String temp = builder.toString();
+        if (temp.length() < str.length())
+            return temp;
+        return str;
+    }
+
+    /*
+        zeroMatrix - Run time of ~O(M*N)
         This method takes in an matrix and for any item in the matrix that is 0, it will
         update the row and column for that item to 0's.
     */

@@ -39,13 +39,13 @@ public class main {
         System.out.println(problems.palindromePermutation("cca"));  // true
 
         // 1.5 oneAway
-
+        // problems.oneAway();
 
         // 1.6 stringCompression
-
+        System.out.println(problems.stringCompression("aabcccccaaa"));
 
         //  1.7 rotateMatrix
-
+        // problems.rotateMatrix();
 
         // 1.8 zeroMatrix
         System.out.println("\n1.2 zeroMatrix");
