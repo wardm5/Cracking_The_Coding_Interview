@@ -6,20 +6,11 @@ public class Problems {
     }
 
     /*
-        isUnique1 - Run time of O(n)
-        This method goes through a string and determines if any characters are
-        repeated or not.
-
-        Note:  if not allowed additional datastructures such as Set
+        Private Constructor
+        in terms of inheritance, what is the effect of keeping a constructor private?
     */
-    public boolean isUnique1(String str) {
-        HashSet<Character> set = new HashSet<>();
-        for (int i = 0; i < str.length(); i++) {
-            if (set.contains(str.charAt(i)))
-                return false;
-            set.add(str.charAt(i));
-        }
-        return true;
+    public boolean privateConstructor() {
+        System.out.println(".");
     }
 
 }
