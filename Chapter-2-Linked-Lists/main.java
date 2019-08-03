@@ -2,13 +2,7 @@ public class main {
     public static void main(String[] args) {
         Problems problems = new Problems();
         // LinkedList setup
-        LinkedList<Integer> list = new LinkedList<>();
-        list.addToTail(1);
-        list.addToTail(2);
-        list.addToTail(3);
-        list.addToTail(1);
-        list.addToTail(2);
-        list.addToTail(3);
+        LinkedList<Integer> list = setupList();
 
         // 1.1 removeDuplicates1 - data structures allowed...
         System.out.println("\n1.1 removeDuplicates1");
@@ -31,5 +25,15 @@ public class main {
             build.insert(0, str.charAt(i));
         }
         return build.toString();
+    }
+    private static LinkedList<Integer> setupList() {
+        LinkedList<Integer> list = new LinkedList<>();
+        list.addToTail(1);
+        list.addToTail(2);
+        list.addToTail(3);
+        list.addToTail(1);
+        list.addToTail(2);
+        list.addToTail(3);
+        return list;
     }
 }
