@@ -3,7 +3,7 @@ public class Problems {
     public void test() {
         System.out.println("this works! " );
     }
-    public void removeDuplicates(LinkedList<Integer> list) {
+    public void removeDuplicates1(LinkedList<Integer> list) {
         HashSet<Integer> set = new HashSet<>();
         Node<Integer> temp = list.getHead();
         Node prior = null;
