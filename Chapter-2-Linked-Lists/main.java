@@ -5,16 +5,20 @@ public class main {
         LinkedList<Integer> list = setupList();
 
         // 1.1 removeDuplicates1 - data structures allowed...
-        System.out.println("\n1.1 removeDuplicates1");
-        problems.removeDuplicates1(list);   // takes O(n) time due to going through entire list once.
+        System.out.println("\n1.1 removeDuplicates1");  // takes O(n) time due to going through entire list once.
+        problems.removeDuplicates1(list);  // 1 2 3
         list.print();
 
         // 1.1 removeDuplicates2 - no data structures allowed...
-        System.out.println("\n1.1 removeDuplicates2");
-        problems.removeDuplicates1(list);   // takes O(n) time due to going through entire list once.
+        list = setupList();
+        System.out.println("\n1.1 removeDuplicates2");  // takes O(n) time due to going through entire list once.
+        problems.removeDuplicates2(list);    // 1 2 3
         list.print();
 
-
+        list = setupList();
+        System.out.println("\n1.2. kthFromLast");
+        Node<Integer> temp = problems.kthFromLast(list, 4);
+        System.out.println(temp.get());
     }
     private static void write(String input) {
         System.out.println(input);
