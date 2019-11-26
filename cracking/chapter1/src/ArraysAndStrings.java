@@ -1,7 +1,8 @@
+package cracking.chapter1.src;
 import java.util.*;
-public class Problems {
+public class ArraysAndStrings {
     // just a simple test method
-    public void test() {
+    public static void test() {
         System.out.println("This test works! ");
     }
 
@@ -12,7 +13,7 @@ public class Problems {
 
         Note:  if not allowed additional datastructures such as Set
     */
-    public boolean isUnique1(String str) {
+    public static boolean isUnique1(String str) {
         HashSet<Character> set = new HashSet<>();
         for (int i = 0; i < str.length(); i++) {
             if (set.contains(str.charAt(i)))
@@ -29,7 +30,7 @@ public class Problems {
 
         Note:  if allowed additional datastructures such as Set
     */
-    public boolean isUnique2(String str) {
+    public static boolean isUnique2(String str) {
         boolean[] arr = new boolean[128];
         for (int i = 0; i < str.length(); i++) {
             char temp = str.charAt(i);
@@ -46,7 +47,7 @@ public class Problems {
         This method checks two strings to see if they are permutations of each`
         other and returns a boolean if they are or not.
     */
-    public boolean checkPermutation(String str1, String str2) {
+    public static boolean checkPermutation(String str1, String str2) {
         if (str1.length() != str2.length())  // imediate check if string is not the same length, obviously false
             return false;
         // null check as well
@@ -73,7 +74,7 @@ public class Problems {
 
         Note: not in place
     */
-    public String URLify1(String s, int length) {
+    public static String URLify1(String s, int length) {
         if (s == null || s.isEmpty())
             return "";
         int count = 0;
@@ -99,7 +100,7 @@ public class Problems {
 
         Note: in place
     */
-    public String URLify2(char[] str, int length) {
+    public static String URLify2(char[] str, int length) {
         int end = str.length - 1;
         int curr = length - 1;
         while (curr >= 0) {
@@ -123,7 +124,7 @@ public class Problems {
         This method takes in a string and determines if that string is a palindrone permutation, that is
         if the string could be a palindrone or not.
     */
-    public boolean palindromePermutation(String str1) {
+    public static boolean palindromePermutation(String str1) {
         int oddCount = 0;                               // initalize odd count
         int[] arr = new int[256];                       // initlaize array to keep track of characters
         for (int i = 0 ; i < str1.length(); i++) {      // for each character in string
@@ -142,7 +143,7 @@ public class Problems {
         This method takes in a string and then either compresses it by noting how many characters were typed
         or provide the orginal string if that was shorter than the 'compressed version'
     */
-    public String stringCompression(String str) {
+    public static String stringCompression(String str) {
         // null check
         StringBuilder builder = new StringBuilder();        //  create string builder for efficent string concatination
         int count = 0;                                      // initalize count
@@ -169,7 +170,7 @@ public class Problems {
         This method takes in an matrix and for any item in the matrix that is 0, it will
         update the row and column for that item to 0's.
     */
-    public void zeroMatrix(int[][] matrix) {
+    public static void zeroMatrix(int[][] matrix) {
         ArrayList<ArrayList<Integer>> list = new ArrayList<>();  // creates array of array of integers to store coordinates
         for (int i = 0; i < matrix.length; i++) {               // go through each point in matrix
             for (int j = 0; j < matrix[0].length; j++) {
@@ -183,7 +184,7 @@ public class Problems {
         }
         fill(list, matrix);         // helper method to fill in the matrix
     }
-    private void fill(ArrayList<ArrayList<Integer>> list, int[][] matrix) {
+    private static void fill(ArrayList<ArrayList<Integer>> list, int[][] matrix) {
         for (int z = 0; z < list.size(); z++) {     // for all arrays in the ArrayList
             int i = list.get(z).get(0);             // get the y value
             int j = list.get(z).get(1);             // get the x value
@@ -200,7 +201,7 @@ public class Problems {
         stringRotation - Run time of O(1)
         This method checks if a second string is a rotation of the first string.
     */
-    public boolean stringRotation(String str1, String str2) {
+    public static boolean stringRotation(String str1, String str2) {
         String temp = str2 + str2;
         return temp.contains(str1);
     }

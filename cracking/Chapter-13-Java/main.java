@@ -6,6 +6,6 @@ public class main {
         System.out.println("\n1.1 isUnique1");
         // System.out.println(problems.isUnique1("abc"));  // return true
         // System.out.println(problems.isUnique1("abbc")); // return false
-        problems.test();
+        
     }
 }
